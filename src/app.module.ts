@@ -4,7 +4,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { EventSourcingModule } from 'event-sourcing-nestjs';
 import { RediskModule } from 'redisk-nestjs';
-import { config } from 'src/config';
+import { config } from './config';
 import { GraphModule } from './graphql/graph.module';
 
 @Module({})

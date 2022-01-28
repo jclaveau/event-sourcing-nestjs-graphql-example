@@ -1,8 +1,8 @@
 import { Resolver, Args, Query, Mutation, Context } from '@nestjs/graphql';
 import { CommandBus } from '@nestjs/cqrs';
 import { LoginCommand } from '../commands/impl/login.command';
-import { AuthService } from 'src/graphql/services/auth.service';
-import { GqlAuthGuard } from 'src/graphql/guards/gql-auth.guard';
+import { AuthService } from '../../graphql/services/auth.service';
+import { GqlAuthGuard } from '../../graphql/guards/gql-auth.guard';
 import { UseGuards } from '@nestjs/common';
 
 @Resolver('Auth')

@@ -2,9 +2,9 @@ import { mock, instance, when, verify, deepEqual } from 'ts-mockito';
 import { CreateUserHandler } from './create-user.handler';
 import { StoreEventBus } from 'event-sourcing-nestjs';
 import { CreateUserCommand } from '../impl/create-user.command';
-import { UserCreatedEvent } from 'src/users/events/impl/user-created.event';
-import { DateFactory } from 'src/common/date.factory';
-import { UidGenerator } from 'src/common/uid-generator';
+import { UserCreatedEvent } from '../../events/impl/user-created.event';
+import { DateFactory } from '../../../common/date.factory';
+import { UidGenerator } from '../../../common/uid-generator';
 
 describe('CreateUserHandler', () => {
     it('should emit UserCreatedEvent', async () => {

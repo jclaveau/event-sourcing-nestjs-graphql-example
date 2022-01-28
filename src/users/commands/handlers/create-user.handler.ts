@@ -1,9 +1,9 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { CreateUserCommand } from '../impl/create-user.command';
-import { UserCreatedEvent } from 'src/users/events/impl/user-created.event';
+import { UserCreatedEvent } from '../../events/impl/user-created.event';
 import { StoreEventBus } from 'event-sourcing-nestjs';
-import { UidGenerator } from 'src/common/uid-generator';
-import { DateFactory } from 'src/common/date.factory';
+import { UidGenerator } from '../../../common/uid-generator';
+import { DateFactory } from '../../../common/date.factory';
 
 @CommandHandler(CreateUserCommand)
 export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {

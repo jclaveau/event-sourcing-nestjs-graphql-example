@@ -2,9 +2,9 @@ import { LoginHandler } from './login.handler';
 import { LoginCommand } from '../impl/login.command';
 import { Redisk } from 'redisk';
 import { mock, instance, when, deepEqual } from 'ts-mockito';
-import { AuthService } from 'src/graphql/services/auth.service';
-import { User } from 'src/users/entities/user.entity';
-import { AuthPayload } from 'src/graphql/services/auth.payload';
+import { AuthService } from '../../../graphql/services/auth.service';
+import { User } from '../../../users/entities/user.entity';
+import { AuthPayload } from '../../../graphql/services/auth.payload';
 import { ForbiddenException } from '@nestjs/common';
 
 describe('LoginHandler with valid email', () => {

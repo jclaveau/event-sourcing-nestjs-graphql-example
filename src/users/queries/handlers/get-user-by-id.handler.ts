@@ -1,7 +1,7 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { GetUserByIdQuery } from '../impl';
 import { Redisk } from 'redisk';
-import { User } from 'src/users/entities/user.entity';
+import { User } from '../../entities/user.entity';
 
 @QueryHandler(GetUserByIdQuery)
 export class GetUserByIdHandler implements IQueryHandler<GetUserByIdQuery> {

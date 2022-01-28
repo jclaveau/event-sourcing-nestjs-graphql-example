@@ -2,7 +2,7 @@ import * as passport from 'passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Injectable } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
-import { config } from 'src/config';
+import { config } from '../../config';
 
 @Injectable()
 export class LocalStrategy extends Strategy {

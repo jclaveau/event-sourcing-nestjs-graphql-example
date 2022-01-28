@@ -3,8 +3,8 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { CommandHandlers } from './commands/handlers';
 import { EventSourcingModule } from 'event-sourcing-nestjs';
 import { AuthResolver } from './graphql/auth.resolver';
-import { CommonModule } from 'src/common/common.module';
-import { GraphModule } from 'src/graphql/graph.module';
+import { CommonModule } from '../common/common.module';
+import { GraphModule } from '../graphql/graph.module';
 
 @Module({
     imports: [

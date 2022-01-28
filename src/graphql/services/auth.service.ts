@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 import { Injectable } from '@nestjs/common';
 import { AuthPayload } from './auth.payload';
-import { config } from 'src/config';
+import { config } from '../../config';
 
 @Injectable()
 export class AuthService {
