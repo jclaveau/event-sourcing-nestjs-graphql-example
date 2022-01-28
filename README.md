@@ -22,6 +22,9 @@ Edit the file with your config data.
 ## Running the app
 
 ```bash
+# start Redis and Mongodb
+$ docker-compose up
+
 # development
 $ npm run start
 
@@ -46,11 +49,11 @@ $ npm run test:cov
 ```
 
 ## Where to start
-You can use the user's commands and queries via API REST, check src/users/users.controller.ts, or via graphql, http://localhost:3000/graphql. 
+You can use the user's commands and queries via API REST, check src/users/users.controller.ts, or via graphql, http://localhost:3000/graphql.
 
 ## Reconstructing the view db
 
-Just run 
+Just run
 ```bash
 npm run reconstruct-view-db
 ```
