@@ -37,3 +37,4 @@ lerna-debug.log*
 /.env
 
 dump.rdb
+/docker-volumes
