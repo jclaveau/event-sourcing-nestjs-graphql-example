@@ -7,7 +7,6 @@ import { AuthService } from './services/auth.service';
 
 @Module({
     imports: [
-        AuthService,
         GraphQLModule.forRoot({
           debug: config.NODE_ENV === 'development',
           playground: config.NODE_ENV === 'development',
