@@ -12,13 +12,37 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    // app.enableCors();
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
+  it('/ (GET)', (done) => {
+
+    const server = app.getHttpServer();
+    const router = server._events.request._router;
+
+    const availableRoutes: [] = router.stack
+      .map(layer => {
+        if (layer.route) {
+          return {
+            route: {
+              path: layer.route?.path,
+              method: layer.route?.stack[0].method,
+            },
+          };
+        }
+      })
+      .filter(item => item !== undefined);
+    console.log(availableRoutes);
+
+
+    // const req = request.default(server)
+    const req = request.default(server)
+    // console.log(req);
+    req
       .get('/')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Made with <3 by Arker Labs')
+      .end(done);
   });
 });
