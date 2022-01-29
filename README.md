@@ -5,6 +5,7 @@ All developed on top of NestJS using typescript.
 
 If your looking for an Api REST impl instead of GraphQL check this [repository](https://github.com/ArkerLabs/event-sourcing-nestjs-example).
 
+[![Tests](https://github.com/jclaveau/event-sourcing-nestjs-graphql-example/actions/workflows/tests.yml/badge.svg)](https://github.com/jclaveau/event-sourcing-nestjs-graphql-example/actions/workflows/tests.yml)
 ## Installation
 
 ```bash
@@ -23,7 +24,7 @@ Edit the file with your config data.
 
 ```bash
 # start Redis and Mongodb
-$ docker-compose up
+$ docker-compose up -d
 
 # development
 $ npm run start

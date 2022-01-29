@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14, 16 ]
+        # redis-version: [6]
+        # mongo-version: [5.0]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Start containers
+      run: docker-compose -f "docker-compose.yaml" up -d --build
+
+    - name: yarn install and test
+      run: |
+        yarn install
+        yarn test
+
+    - name: Stop containers
+      if: always()
+      run: docker-compose -f "docker-compose.yaml" down
